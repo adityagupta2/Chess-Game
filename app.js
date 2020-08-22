@@ -130,13 +130,21 @@ function play()
 {
     var value = document.getElementById("position").value;
     var input = value.split(" ");
+    var x1 = queen.position.x;
+    var y1 = queen.position.y;
     input.forEach(num => {
         let number = Number(num.slice(num.length-1));
         let dir = num.slice(0, num.length-1);
         move(number, dir);
     });
     let message = document.getElementById("message");
-    let output = board[queen.position.x][queen.position.y];
+    let output;
+    if(queen.position.x==x1 && queen.position.y==y1){
+        output = "Out of Boundary!!";
+    }
+    else{
+        output = board[queen.position.x][queen.position.y];
+    }
     message.style.display = "inherit";
     message.innerHTML = `Queen's Current Position -> ${output}`;
 }
