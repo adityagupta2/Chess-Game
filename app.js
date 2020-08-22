@@ -22,7 +22,7 @@ function move(numberOfSteps, direction)
 {
     let temp;
     let temp1;
-
+    
     switch(direction)
     {
         case "E": 
